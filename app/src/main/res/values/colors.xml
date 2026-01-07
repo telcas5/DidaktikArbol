@@ -2,4 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <!-- Button Colors -->
+    <color name="btnPrincipal">#66BB6A</color> <!-- Green 400 -->
+    <color name="btnPrincipalShadow">#388E3C</color> <!-- Green 700 -->
+    <color name="btnSecundario">#78909C</color> <!-- Blue Grey 400 -->
+    <color name="btnSecundarioShadow">#455A64</color> <!-- Blue Grey 700 -->
+
+    <!-- Value Colors -->
+    <color name="valueFriendship">#E91E63</color> <!-- Pink -->
+    <color name="valueFreedom">#2196F3</color> <!-- Blue -->
+    <color name="valueSolidarity">#FFC107</color> <!-- Amber -->
+    <color name="valueRespect">#9C27B0</color> <!-- Purple -->
+    <color name="valuePeace">#00BCD4</color> <!-- Cyan -->
 </resources>

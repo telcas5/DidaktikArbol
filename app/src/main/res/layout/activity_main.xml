@@ -1,29 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo1"
+    tools:context=".MainActivity">
 
-    <GridLayout
-        android:id="@+id/gridPuzzle"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_margin="32dp"
-        android:columnCount="3"
-        android:rowCount="3"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tvInstrucciones"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Toca una pieza adyacente al hueco"
-        android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/btnArbol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_boton_primario"
+            app:backgroundTint="@null"
+            android:text="Arbol" />
+
+        <Button
+            android:id="@+id/btnBunkers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_boton_primario"
+            app:backgroundTint="@null"
+            android:text="Bunkers" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

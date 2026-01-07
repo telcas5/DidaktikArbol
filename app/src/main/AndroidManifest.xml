@@ -20,6 +20,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PuzzleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArbolActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BunkersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NireArbolaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArbolInteractivoActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
