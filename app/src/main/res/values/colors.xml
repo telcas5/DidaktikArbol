@@ -15,4 +15,13 @@
     <color name="valueSolidarity">#FFC107</color> <!-- Amber -->
     <color name="valueRespect">#9C27B0</color> <!-- Purple -->
     <color name="valuePeace">#00BCD4</color> <!-- Cyan -->
+
+    <!-- Quiz Feedback -->
+    <color name="correct">#4CAF50</color>
+    <color name="incorrect">#F44336</color>
+
+    <!-- Bunkers Module -->
+    <color name="bunkerBackground">#121212</color>
+    <color name="bunkerCard">#1E1E1E</color>
+    <color name="starColor">#FFD700</color>
 </resources>

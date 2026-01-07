@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnBunkers.setOnClickListener {
-            val intent = Intent(this, BunkersActivity::class.java)
+            val intent = Intent(this, SoundGameActivity::class.java)
             startActivity(intent)
         }
     }

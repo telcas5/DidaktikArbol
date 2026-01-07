@@ -27,7 +27,13 @@
             android:name=".ArbolActivity"
             android:exported="false" />
         <activity
-            android:name=".BunkersActivity"
+            android:name=".SoundGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReflectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PeaceMuralActivity"
             android:exported="false" />
         <activity
             android:name=".NireArbolaActivity"
