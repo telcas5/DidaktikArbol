@@ -45,7 +45,7 @@ class PeaceMuralActivity : AppCompatActivity() {
     }
 
     private fun setupMusic() {
-        mediaPlayer = MediaPlayer.create(this, R.raw.genikako_arbola)
+        mediaPlayer = MediaPlayer.create(this, R.raw.babeslekuak_bideoaren_audioa)
         mediaPlayer?.isLooping = true
         mediaPlayer?.start()
     }
