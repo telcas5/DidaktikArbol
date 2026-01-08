@@ -82,6 +82,9 @@ class PuzzleActivity : AppCompatActivity() {
                     setImageBitmap(pieceBitmap)
                     scaleType = ImageView.ScaleType.FIT_XY
                     layoutParams = FrameLayout.LayoutParams(pieceWidth, pieceHeight)
+                    // Add white border
+                    setBackgroundResource(R.drawable.puzzle_piece_border)
+                    setPadding(5, 5, 5, 5)
                 }
 
                 // Calculate target position relative to parent
@@ -126,10 +129,12 @@ class PuzzleActivity : AppCompatActivity() {
                             Math.pow((v.y - piece.targetY).toDouble(), 2.0)
                         )
 
-                        if (distance < 120) {
+                        if (distance < 150) {
                             v.x = piece.targetX
                             v.y = piece.targetY
                             isPlaced = true
+                            v.background = null // Remove border when placed
+                            v.setPadding(0, 0, 0, 0)
                             v.setOnTouchListener(null)
                             playSuccessSound()
                             checkVictory()

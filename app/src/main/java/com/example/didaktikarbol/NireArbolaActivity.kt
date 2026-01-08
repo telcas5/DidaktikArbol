@@ -17,6 +17,10 @@ class NireArbolaActivity : AppCompatActivity() {
         setupButton(R.id.btnSolidarity, R.color.valueSolidarity)
         setupButton(R.id.btnRespect, R.color.valueRespect)
         setupButton(R.id.btnPeace, R.color.valuePeace)
+
+        findViewById<Button>(R.id.btnBack).setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun setupButton(buttonId: Int, colorId: Int) {

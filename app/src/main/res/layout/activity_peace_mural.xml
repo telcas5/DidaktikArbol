@@ -12,9 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="BAKEAREN MURAL DIGITALA"
+        android:text="Zein hitzek adierazten dute zuretzat bakea?"
+        android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,36 +35,44 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnBakea"
+                android:id="@+id/btnItxaropenaVal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:backgroundTint="@color/correct"
-                android:text="Bakea" />
+                android:background="@drawable/bg_boton_secundario"
+                app:backgroundTint="@null"
+                android:text="Itxaropena"
+                android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/btnEsperantza"
+                android:id="@+id/btnElkarbizitzaVal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:backgroundTint="@color/valueFreedom"
-                android:text="Esperantza" />
+                android:background="@drawable/bg_boton_secundario"
+                app:backgroundTint="@null"
+                android:text="Elkarbizitza"
+                android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/btnElkarbizitza"
+                android:id="@+id/btnLaguntzaVal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:backgroundTint="@color/valueSolidarity"
-                android:text="Elkarbizitza" />
+                android:background="@drawable/bg_boton_secundario"
+                app:backgroundTint="@null"
+                android:text="Laguntza"
+                android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/btnItxaropena"
+                android:id="@+id/btnAdiskidetasunaVal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:backgroundTint="@color/valueRespect"
-                android:text="Itxaropena" />
+                android:background="@drawable/bg_boton_secundario"
+                app:backgroundTint="@null"
+                android:text="Adiskidetasuna"
+                android:textColor="@color/white" />
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -72,10 +81,34 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="16dp"
-        android:background="@drawable/bg_boton_secundario"
-        android:backgroundTint="#FFFFFF"
+        android:background="#FFFFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/btnFinishMural"
         app:layout_constraintTop_toBottomOf="@+id/wordSelectionScroll" />
+
+    <ImageButton
+        android:id="@+id/btnMute"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_boton_secundario"
+        app:backgroundTint="@null"
+        android:src="@drawable/ic_pause"
+        app:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvFinalCongrats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Zorionak, bakearen mezua zabaldu duzu."
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinishMural"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnFinishMural"

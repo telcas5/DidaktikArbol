@@ -10,6 +10,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Clear tree and mural values when the application opens
+        getSharedPreferences("CollectiveTreePrefs", android.content.Context.MODE_PRIVATE)
+            .edit().clear().apply()
+        getSharedPreferences("PeaceMuralPrefs", android.content.Context.MODE_PRIVATE)
+            .edit().clear().apply()
+
         val btnArbol = findViewById<Button>(R.id.btnArbol)
         val btnBunkers = findViewById<Button>(R.id.btnBunkers)
 

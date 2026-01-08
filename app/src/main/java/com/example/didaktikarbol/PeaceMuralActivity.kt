@@ -1,5 +1,6 @@
 package com.example.didaktikarbol
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AlphaAnimation
@@ -7,6 +8,7 @@ import android.view.animation.AnimationSet
 import android.view.animation.ScaleAnimation
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
@@ -15,33 +17,60 @@ import kotlin.random.Random
 class PeaceMuralActivity : AppCompatActivity() {
 
     private lateinit var muralContainer: FrameLayout
+    private lateinit var tvFinalCongrats: TextView
     private val sharedPrefs by lazy { getSharedPreferences("PeaceMuralPrefs", MODE_PRIVATE) }
+    private var mediaPlayer: MediaPlayer? = null
+    private var isMuted = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_peace_mural)
 
         muralContainer = findViewById(R.id.muralContainer)
+        tvFinalCongrats = findViewById(R.id.tvFinalCongrats)
 
         loadMural()
-
         setupWordButtons()
+        setupMusic()
 
         findViewById<Button>(R.id.btnFinishMural).setOnClickListener {
-            // Return to main menu or finish module
+            mediaPlayer?.stop()
+            mediaPlayer?.release()
             finish()
         }
+
+        findViewById<ImageButton>(R.id.btnMute).setOnClickListener {
+            toggleMute(it as ImageButton)
+        }
+    }
+
+    private fun setupMusic() {
+        mediaPlayer = MediaPlayer.create(this, R.raw.genikako_arbola)
+        mediaPlayer?.isLooping = true
+        mediaPlayer?.start()
+    }
+
+    private fun toggleMute(btn: ImageButton) {
+        if (isMuted) {
+            mediaPlayer?.setVolume(1.0f, 1.0f)
+            btn.setImageResource(R.drawable.ic_pause)
+        } else {
+            mediaPlayer?.setVolume(0.0f, 0.0f)
+            btn.setImageResource(R.drawable.ic_play)
+        }
+        isMuted = !isMuted
     }
 
     private fun setupWordButtons() {
         val buttons = listOf(
-            R.id.btnBakea, R.id.btnEsperantza, R.id.btnElkarbizitza, R.id.btnItxaropena
+            R.id.btnItxaropenaVal, R.id.btnElkarbizitzaVal, R.id.btnLaguntzaVal, R.id.btnAdiskidetasunaVal
         )
 
         buttons.forEach { id ->
             findViewById<Button>(id).setOnClickListener {
                 val text = (it as Button).text.toString()
                 addWordToMural(text, isNew = true)
+                tvFinalCongrats.visibility = View.VISIBLE
             }
         }
     }
@@ -100,5 +129,11 @@ class PeaceMuralActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer?.release()
+        mediaPlayer = null
     }
 }

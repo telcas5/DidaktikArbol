@@ -22,6 +22,10 @@ class ArbolInteractivoActivity : AppCompatActivity() {
 
         treeContainer = findViewById(R.id.treeContainer)
 
+        findViewById<View>(R.id.btnBack).setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+
         // 1. Load existing entries
         loadAndDisplayEntries()
 
